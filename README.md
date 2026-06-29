@@ -29,11 +29,14 @@ figures) is inline in the notebook. Generated plots are saved to `figures/`.
 - `fig1_prediction.png` — GPT-2's IOI prediction (paper Fig 1)
 - `C_fig2_circuit_diagram.png` — the circuit (paper Fig 2) annotated with our attribution
 - `C_fig3b_direct_logit_effect.png` — direct effect on the logit diff per head (Fig 3b)
+- `C_fig3c_attn_vs_projection.png` — attention prob vs name-projection (Fig 3c)
 - `C_fig4b_effect_on_NM_queries.png` — edge attribution → Name-Mover queries (Fig 4b)
 - `C_fig5b_effect_on_SI_values.png` — edge attribution → S-Inhibition values (Fig 5b)
 - `C_fig7_class_contribution.png`, `C_fig8_metrics.png` — Fig 7 / Fig 8
 - `B_heads_total_effect.png`, `B_heads_by_position.png` — per-head & per-position maps
 - `A_network_map.png`, `A_all_hidden_dims.png`, `A_attn_vs_mlp.png` — the full-network view
+- `E_within_head_dims.png` — neurons *inside* attention heads (per-dimension attribution)
+- `E_mlp_neuron_positions.png` — MLP neurons and the token positions they act on
 - `D_visibility_by_corruption.png`, `D_top_mlp_neurons.png` — circuits beyond the paper
 
 ## Key results (1000 examples, ~3.5 clean logit diff vs paper's 3.56)
