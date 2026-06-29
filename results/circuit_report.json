@@ -1,0 +1,273 @@
+{
+  "n_examples": 512,
+  "mean_clean_logit_diff": 3.4648,
+  "mean_corrupt_logit_diff": -0.3346,
+  "coverage": {
+    "n_circuit": 26,
+    "top_k": 26,
+    "n_recovered_in_top_k": 19,
+    "heads": [
+      {
+        "head": "0.1",
+        "class": "duplicate_token",
+        "attr": -0.0009,
+        "rank": 50,
+        "in_top_k": false,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "0.10",
+        "class": "duplicate_token",
+        "attr": -0.0012,
+        "rank": 40,
+        "in_top_k": false,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "2.2",
+        "class": "previous_token",
+        "attr": 0.0001,
+        "rank": 102,
+        "in_top_k": false,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "3.0",
+        "class": "duplicate_token",
+        "attr": 0.008,
+        "rank": 17,
+        "in_top_k": true,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "4.11",
+        "class": "previous_token",
+        "attr": 0.0012,
+        "rank": 42,
+        "in_top_k": false,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "5.5",
+        "class": "induction",
+        "attr": 0.0398,
+        "rank": 4,
+        "in_top_k": true,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "5.8",
+        "class": "induction",
+        "attr": -0.0044,
+        "rank": 19,
+        "in_top_k": true,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "5.9",
+        "class": "induction",
+        "attr": -0.0157,
+        "rank": 9,
+        "in_top_k": true,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "6.9",
+        "class": "induction",
+        "attr": 0.0196,
+        "rank": 7,
+        "in_top_k": true,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "7.3",
+        "class": "s_inhibition",
+        "attr": 0.017,
+        "rank": 8,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "7.9",
+        "class": "s_inhibition",
+        "attr": 0.0381,
+        "rank": 5,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "8.6",
+        "class": "s_inhibition",
+        "attr": 0.0551,
+        "rank": 1,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "8.10",
+        "class": "s_inhibition",
+        "attr": 0.033,
+        "rank": 6,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "9.0",
+        "class": "backup_name_mover",
+        "attr": -0.0001,
+        "rank": 123,
+        "in_top_k": false,
+        "dominant_pos": "S2"
+      },
+      {
+        "head": "9.6",
+        "class": "name_mover",
+        "attr": -0.015,
+        "rank": 11,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "9.7",
+        "class": "backup_name_mover",
+        "attr": 0.0122,
+        "rank": 14,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "9.9",
+        "class": "name_mover",
+        "attr": 0.0418,
+        "rank": 3,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "10.0",
+        "class": "name_mover",
+        "attr": 0.0145,
+        "rank": 12,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "10.1",
+        "class": "backup_name_mover",
+        "attr": 0.0041,
+        "rank": 21,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "10.2",
+        "class": "backup_name_mover",
+        "attr": 0.0008,
+        "rank": 51,
+        "in_top_k": false,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "10.6",
+        "class": "backup_name_mover",
+        "attr": 0.0125,
+        "rank": 13,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "10.7",
+        "class": "negative_name_mover",
+        "attr": -0.0677,
+        "rank": 0,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "10.10",
+        "class": "backup_name_mover",
+        "attr": 0.0102,
+        "rank": 15,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "11.2",
+        "class": "backup_name_mover",
+        "attr": -0.0152,
+        "rank": 10,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "11.9",
+        "class": "backup_name_mover",
+        "attr": 0.0005,
+        "rank": 63,
+        "in_top_k": false,
+        "dominant_pos": "END"
+      },
+      {
+        "head": "11.10",
+        "class": "negative_name_mover",
+        "attr": -0.0469,
+        "rank": 2,
+        "in_top_k": true,
+        "dominant_pos": "END"
+      }
+    ]
+  },
+  "extras_in_top_k": [
+    {
+      "head": "9.4",
+      "rank": 16,
+      "attr": -0.0093,
+      "dominant_pos": "END",
+      "guess": "name-mover / S-inhibition (acts at END)"
+    },
+    {
+      "head": "6.0",
+      "rank": 18,
+      "attr": 0.0059,
+      "dominant_pos": "END",
+      "guess": "name-mover / S-inhibition (acts at END)"
+    },
+    {
+      "head": "4.3",
+      "rank": 20,
+      "attr": 0.0043,
+      "dominant_pos": "S2",
+      "guess": "duplicate / induction (acts at S2)"
+    },
+    {
+      "head": "9.3",
+      "rank": 22,
+      "attr": 0.0041,
+      "dominant_pos": "END",
+      "guess": "name-mover / S-inhibition (acts at END)"
+    },
+    {
+      "head": "8.3",
+      "rank": 23,
+      "attr": -0.0037,
+      "dominant_pos": "END",
+      "guess": "name-mover / S-inhibition (acts at END)"
+    },
+    {
+      "head": "11.6",
+      "rank": 24,
+      "attr": -0.0035,
+      "dominant_pos": "END",
+      "guess": "name-mover / S-inhibition (acts at END)"
+    },
+    {
+      "head": "7.1",
+      "rank": 25,
+      "attr": 0.0031,
+      "dominant_pos": "S2",
+      "guess": "duplicate / induction (acts at S2)"
+    }
+  ],
+  "corruption": "abc_counterfactual",
+  "runtime_sec": 12.0
+}
