@@ -1,17 +1,2 @@
-# Python
-__pycache__/
-*.pyc
 .ipynb_checkpoints/
-.venv/
-env/
-
-# Scratch / experiments
-scratch_*.py
-
-# Large artifacts (regenerate with run_small.py). Keep figures + small tables.
-results/per_dim.npz
-results/*.npz
-
-# OS
-.DS_Store
-Thumbs.db
+__pycache__/
