@@ -23,6 +23,8 @@ from dataclasses import dataclass
 import torch
 from huggingface_hub import hf_hub_download
 
+from .positions import find_positions, POS_NAMES
+
 
 @dataclass
 class Batch:
@@ -31,6 +33,7 @@ class Batch:
     io_ids: torch.Tensor      # [b]  token id of indirect object (correct answer)
     s_ids: torch.Tensor       # [b]  token id of subject (the distractor)
     seq_len: int
+    positions: dict[str, torch.Tensor] | None = None  # name -> [b] index per example
 
 
 def load_raw(split: str = "test") -> list[dict]:
@@ -72,13 +75,20 @@ def build_batches(
         corrupt_ids = tok(ex[corruption]["prompt"])["input_ids"]
         if len(clean_ids) != len(corrupt_ids):
             continue
-        by_len[len(clean_ids)].append((clean_ids, corrupt_ids, io_id, s_id))
+        pos = find_positions(clean_ids, io_id, s_id)
+        if pos is None:
+            continue
+        by_len[len(clean_ids)].append((clean_ids, corrupt_ids, io_id, s_id, pos))
         kept += 1
 
     batches: list[Batch] = []
     for L, rows in by_len.items():
         for i in range(0, len(rows), batch_size):
             chunk = rows[i : i + batch_size]
+            positions = {
+                name: torch.tensor([r[4][name] for r in chunk], device=device)
+                for name in POS_NAMES
+            }
             batches.append(
                 Batch(
                     clean_ids=torch.tensor([r[0] for r in chunk], device=device),
@@ -86,6 +96,7 @@ def build_batches(
                     io_ids=torch.tensor([r[2] for r in chunk], device=device),
                     s_ids=torch.tensor([r[3] for r in chunk], device=device),
                     seq_len=L,
+                    positions=positions,
                 )
             )
     return batches
