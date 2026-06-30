@@ -46,9 +46,11 @@ attribution patching**; the completeness/minimality/MLP figures (6/7/19) use
 **Below components (neurons):**
 `E_within_head_dims.png` (the 64 dims inside each head),
 `E_mlp_neuron_positions.png` (MLP neurons by token position),
-`E_neuron_recovery_curve.png` (MLP-neuron sparsity vs attention-coordinate density),
-`C_fig6_completeness_neurons.png`, `C_fig7_minimality_neurons.png` (Figs 6/7 in the
-neuron basis), plus `A_coordinate_maps.png` and `B_heads_*` for the full-network view.
+`C_fig6_neuron_completeness.png` (neuron-basis completeness: how much of F(M) the
+top-K neurons recover — attention coords vs MLP neurons),
+`C_fig7_minimality_neurons.png` (per-MLP-neuron minimality, ablated one-at-a-time
+from the full model), plus `A_coordinate_maps.png` and `B_heads_*` for the full
+network view.
 
 ## Key results (GPT-2 small, ~500 IOI examples)
 
@@ -59,10 +61,13 @@ neuron basis), plus `A_coordinate_maps.png` and `B_heads_*` for the full-network
   places the 26-head circuit near `y=x`.
 - **Fig 19**: knocking out **MLP0 reverses the sign of the logit difference**; all other
   MLP layers barely matter (reproduces Appendix J).
-- **Neuron basis:** the MLP contribution is **sparse** (a few hundred MLP neurons recover
-  the full-model logit diff) while attention is **dense** in the coordinate basis (heads
-  need their whole 64-dim output). Beyond the paper, head **9.4** is a robust non-canonical
-  (negative-name-mover-like) head.
+- **Neuron basis (a real finding):** the IOI computation is **partially sparse in the
+  attention-coordinate basis** (keeping the top ~3200/9216 attention coordinates and all
+  MLPs recovers ~80% of F(M)) but **dense in the MLP-neuron basis** — mean-ablating most
+  MLP neurons *reverses* the logit-diff sign, driven by MLP0 and the collective later
+  MLPs (so you cannot reduce the MLP contribution to a few neurons). This nuances the
+  "circuits are sparse in the neuron basis" picture for this task. Beyond the paper, head
+  **9.4** is a robust non-canonical (negative-name-mover-like) head.
 
 ## Run
 
